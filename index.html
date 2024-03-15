@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ренджи</title>
+    <style>
+        body {
+            background-color: rgb(35, 39, 42);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        #imageContainer {
+            position: absolute;
+            top: 20px;
+            left: 250px;
+            margin-bottom: 20px;
+        }
+        #imageContainer img {
+            width: 1419px;
+            height: 946px;
+        }
+        .buttons {
+            position: absolute;
+            top: 986px;
+            left: 250px;
+        }
+        .buttons button {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background-color: #4A5568; /* Базовый цвет для первого ряда кнопок */
+            color: #E2E8F0;
+            border: none;
+            cursor: pointer;
+            line-height: 30px;
+            transition: background-color 0.3s, filter 0.3s;
+        }
+        .buttons button:hover {
+            background-color: #718096;
+            filter: brightness(1.1);
+        }
+        /* Новый класс для кнопок второго ряда с более темным цветом */
+        .buttons .button-row-2 {
+            background-color: #283593; /* Более темный цвет для второго ряда */
+        }
+        .buttons .button-row-2:hover {
+            background-color: #505050; /* Светлее, но всё ещё темный цвет для эффекта при наведении */
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer">
+        <img id="pokerChart" src="pic1.png" alt="RANGE">
+    </div>
+    <div class="buttons">
+        <!-- Первый ряд кнопок -->
+        <button style="top: 0; left: 0px;" onclick="changeImage(1)">EP</button>
+        <button style="top: 0; left: 90px;" onclick="changeImage(2)">MP</button>
+        <button style="top: 0; left: 180px;" onclick="changeImage(3)">CO</button>
+        <button style="top: 0; left: 270px;" onclick="changeImage(4)">BU</button>
+        <button style="top: 0; left: 360px;" onclick="changeImage(5)">SB</button>
+        <!-- Второй ряд кнопок -->
+        <button class="button-row-2" style="top: 40px; left: 0px;" onclick="changeImage(6)">MP</button>
+        <button class="button-row-2" style="top: 40px; left: 90px;" onclick="changeImage(7)">CO</button>
+        <button class="button-row-2" style="top: 40px; left: 180px;" onclick="changeImage(8)">BU</button>
+        <button class="button-row-2" style="top: 40px; left: 270px;" onclick="changeImage(9)">SB</button>
+        <button class="button-row-2" style="top: 40px; left: 360px;" onclick="changeImage(10)">BB</button>
+    </div>
+
+    <script>
+        function changeImage(number) {
+            document.getElementById('pokerChart').src = 'pic' + number + '.png';
+        }
+    </script>
+</body>
+</html>
